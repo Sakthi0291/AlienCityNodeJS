@@ -1,0 +1,61 @@
+version: 1.0
+
+runners:
+  high:
+    config-id: 3
+
+pipeline-when:
+  equal:
+    - << event.ref >>
+    - refs/heads/main
+
+images:
+  node:
+    image: node:18
+    auth:
+      username: << env.DOCKER_USERNAME >>
+      password: << env.DOCKER_PASS >>
+
+jobs:
+  build:
+    steps:
+      - npm install
+      - zip -r app.zip .
+    artifacts:
+      upload:
+        - type: file
+          name: app.zip
+          file: app.zip
+          location: stratus://<< env.BUCKET_NAME >>/
+
+  catalyst-deploy:
+    when:
+      equal:
+        - << status.build.build >>
+        - success
+    steps:
+      - npm install -g zcatalyst-cli@beta
+      - >-
+        catalyst deploy appsail \
+        --name AlienCityNodeJSAppSail \
+        --build-path "/catalyst/app.zip" \
+        --stack node18 \
+        --platform nodejs \
+        --command "npm start" \
+        --verbose
+    artifacts:
+      download:
+        - type: file
+          name: app.zip
+          file: /app.zip
+          location: stratus://<< env.BUCKET_NAME >>/
+
+stages:
+  - name: build
+    image: node
+    jobs:
+      - build
+  - name: deploy
+    image: node
+    jobs:
+      - catalyst-deploy
