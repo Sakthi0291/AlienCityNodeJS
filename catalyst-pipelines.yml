@@ -19,6 +19,7 @@ images:
 jobs:
   build:
     steps:
+      - apt-get update && apt-get install -y zip
       - npm install
       - zip -r app.zip .
     artifacts:
