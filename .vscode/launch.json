@@ -1,0 +1,16 @@
+{
+   
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "AppSail Node",
+            "type": "node",
+            "request": "attach",
+            "address": "localhost",
+            "port": 8090,
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "${workspaceFolder}"
+        }
+      
+    ]
+}
