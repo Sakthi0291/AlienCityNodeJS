@@ -37,7 +37,7 @@ jobs:
     steps:
       - npm install -g zcatalyst-cli@beta
       - >-
-        catalyst deploy \
+        catalyst deploy appsail \
         --name AlienCityNodeJSAppSail \
         --build-path "/catalyst/app.zip" \
         --stack node18 \
