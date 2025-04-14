@@ -7,7 +7,7 @@ runners:
 pipeline-when:
   equal:
     - << event.ref >>
-    - refs/heads/master
+    - refs/heads/main
 
 images:
   node:
@@ -36,8 +36,7 @@ jobs:
         - success
     steps:
       - npm install -g zcatalyst-cli@beta
-      - >-
-        catalyst deploy appsail \
+      - catalyst deploy appsail \
         --name AlienCityNodeJSAppSail \
         --build-path "/catalyst/app.zip" \
         --stack node18 \
