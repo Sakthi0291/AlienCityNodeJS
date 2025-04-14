@@ -4,10 +4,10 @@ runners:
   high:
     config-id: 3
 
-pipeline-when:
-  equal:
-    - << event.ref >>
-    - refs/heads/master
+# pipeline-when:
+#   equal:
+#     - << event.ref >>
+#     - refs/heads/master
 
 images:
   node:
@@ -36,13 +36,9 @@ jobs:
         - success
     steps:
       - npm install -g zcatalyst-cli@beta
-      - catalyst deploy appsail \
-        --name AlienCityNodeJSAppSail \
-        --build-path "/catalyst/app.zip" \
-        --stack node18 \
-        --platform nodejs \
-        --command "npm start" \
-        --verbose
+      - catalyst deploy appsail --name AlienCityNodeJSAppSail --build-path "/catalyst/app.zip" 
+        --stack node18 --platform nodejs --command "npm start" 
+        --server.port=\${X_ZOHO_CATALYST_LISTEN_PORT}'" --verbose
     artifacts:
       download:
         - type: file
