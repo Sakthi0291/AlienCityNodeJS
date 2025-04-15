@@ -2,7 +2,6 @@ version: 1
 jobs:
   deploy:
     steps:
-    - cd AlienCityNodeJSAppSail
     - npm install
     - npm run build
     # - cd server
