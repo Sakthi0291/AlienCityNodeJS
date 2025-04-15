@@ -1,6 +1,6 @@
 {
     "command": "node index.js",
-    "buildPath": "/Users/sakthi-20436/Documents/AlienCityNodeJSAppSail", 
+    "buildPath": ".", 
     "stack": "node18",
     "env_variables": {},
     "memory": 256,
