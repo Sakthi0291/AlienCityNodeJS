@@ -2,9 +2,8 @@ version: 1
 jobs:
   deploy:
     steps:
-    - cd AlienCityNodeJS
     - npm install
-    # - npm run build
+    - npm run build
     # - cd server
     # - npm install
     # - cd ..
