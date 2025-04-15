@@ -1,5 +1,5 @@
 {
-    "command": "node --inspect=0.0.0.0:8090 index.js",
+    "command": "node index.js",
     "buildPath": "/Users/sakthi-20436/Documents/AlienCityNodeJSAppSail", 
     "stack": "node18",
     "env_variables": {},
