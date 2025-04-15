@@ -14,6 +14,7 @@ jobs:
     # - node ./scripts/filesHelper.js -c ./photo-store-app/build/ ./build/photo-store-app/
     - ls -a
     - pwd
+    - cd AlienCity
     - npm install -g zcatalyst-cli@beta
     - catalyst deploy
         
