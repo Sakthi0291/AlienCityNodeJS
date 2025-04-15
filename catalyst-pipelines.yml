@@ -3,7 +3,7 @@ jobs:
   deploy:
     steps:
     - npm install
-    - npm run build
+    # - npm run build
     # - cd server
     # - npm install
     # - cd ..
