@@ -12,6 +12,7 @@ jobs:
     # - cd ..
     # - node ./scripts/filesHelper.js -c ./server/ ./build/server/
     # - node ./scripts/filesHelper.js -c ./photo-store-app/build/ ./build/photo-store-app/
+    - ls -a
     - npm install -g zcatalyst-cli@beta
     - catalyst deploy
         
