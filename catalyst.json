@@ -1,7 +1,7 @@
 {
   "appsail": [
     {
-      "source": "/Users/sakthi-20436/Documents/AlienCityNodeJSAppSail",
+      "source": ".",
       "name": "AlienCity"
     }
   ]
