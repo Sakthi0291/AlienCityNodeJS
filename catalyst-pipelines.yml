@@ -3,14 +3,9 @@ jobs:
   deploy:
     steps:
     - npm install
-     - npm install -g zcatalyst-cli@beta
-    - npm run build
-    - cd server
-    - npm install
-    - cd ..
-    - cd scripts
-    - npm install
-    - cd ..
+    - npm install -g zcatalyst-cli@beta
+    # - cd scripts
+    # - npm install
     - env
     - catalyst deploy
         
